@@ -14,15 +14,11 @@ class Comments extends Component {
             .then(results => this.setState({comments: results}));
     }
 
-    componentWillUnmount() {
-        console.log('Comments::componentWillUnmount');
-    }
-
     render() {
         const comments = this.state.comments;
         return (
             <div className="comments">
-                <h5>Comments ({comments.length}):</h5>
+                <h5>Comments:</h5>
                 <ul className="list-group">
                     {comments.map(item =>
                         <li key={item.id} className="list-group-item"><span className="badge">{item.email}</span>
